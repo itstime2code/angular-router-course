@@ -1,10 +1,9 @@
-
 body {
-    margin: 0;
+  margin: 0;
 }
 
 main {
-    margin: 30px;
+  margin: 30px;
 }
 
 .user-avatar {
@@ -25,14 +24,32 @@ main {
 
 .menu-item {
   text-transform: uppercase;
-  cursor:pointer;
-}
-.menu-item.mdc-button {
-  min-width: max-content;
+  cursor: pointer;
 }
 
-.menu-item.menu-item-active {
-  text-decoration: underline;
+.menu-item.mdc-button {
+  min-width: max-content;
+  
+  &::after {
+    content: '';
+    position: absolute;
+    inset-block-end: 0.125rem;
+    height: 0.125rem;
+    width: 100%;
+    background-color: transparent;
+    transition: all 250ms ease-in-out;
+    transform: scaleX(0);
+    transform-origin: center;
+  }
+  
+  &:hover::after {
+    background-color: rgba(from currentColor r g b / 0.5);
+  }
+
+  &.menu-item-active::after {
+    transform: scaleX(1);
+    background-color: currentColor;
+  }
 }
 
 
