@@ -8,7 +8,7 @@
     "start:api": "ts-node -P ./server/server.tsconfig.json ./server/server.ts",
     "start": "ng serve  --proxy-config ./proxy.json",
     "server": "ts-node -P ./server/server.tsconfig.json ./server/server.ts",
-    "build": "ng build",
+    "build": "ng build --optimization=false --source-map --named-chunks",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
