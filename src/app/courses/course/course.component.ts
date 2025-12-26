@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Course } from '../model/course';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, RouterOutlet } from '@angular/router';
 import { NgIf } from '@angular/common';
 
 
@@ -8,7 +8,7 @@ import { NgIf } from '@angular/common';
     selector: 'course',
     templateUrl: './course.component.html',
     styleUrls: ['./course.component.css'],
-    imports: [NgIf]
+    imports: [NgIf, RouterOutlet]
 })
 export class CourseComponent implements OnInit {
 
