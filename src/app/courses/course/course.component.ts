@@ -1,11 +1,14 @@
-import {Component, OnInit} from '@angular/core';
-import {Course} from '../model/course';
+import { Component, OnInit } from '@angular/core';
+import { Course } from '../model/course';
+import { ActivatedRoute } from '@angular/router';
+import { NgIf } from '@angular/common';
 
 
 @Component({
     selector: 'course',
     templateUrl: './course.component.html',
-    styleUrls: ['./course.component.css']
+    styleUrls: ['./course.component.css'],
+    imports: [NgIf]
 })
 export class CourseComponent implements OnInit {
 
@@ -14,14 +17,15 @@ export class CourseComponent implements OnInit {
     couponCode: string;
 
 
-    constructor() {
+    constructor(
+        private route: ActivatedRoute,
+    ) {
 
 
     }
 
     ngOnInit() {
-
-
+        this.course = this.route.snapshot.data['course']
     }
 
 
