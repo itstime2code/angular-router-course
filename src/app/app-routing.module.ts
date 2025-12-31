@@ -51,6 +51,8 @@ const routes: Routes = [
     RouterModule.forRoot(routes, {
       // preloadingStrategy: PreloadAllModules,
       preloadingStrategy: CustomPreloadingStrategy,
+      enableTracing: false,
+      useHash: true,
     }),
   ],
   exports: [RouterModule],
