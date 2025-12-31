@@ -34,7 +34,11 @@
     </div>
 
     @if (auth.isLoggedIn$ | async) {
-    <a mat-button class="menu-item">
+    <a
+      mat-button
+      class="menu-item"
+      [routerLink]="[{ outlets: { chat: ['helpdesk-chat'] } }]"
+    >
       <mat-icon>help</mat-icon>
     </a>
     } @if (auth.isLoggedIn$ | async) {
@@ -51,9 +55,11 @@
     }
   </mat-toolbar>
 
-  <messages></messages>
+  <messages />
 
-  <loading [detectRoutingOngoing]="true"></loading>
+  <loading [detectRoutingOngoing]="true" />
 
-  <router-outlet></router-outlet>
+  <router-outlet />
 </mat-sidenav-container>
+
+<router-outlet name="chat" />
