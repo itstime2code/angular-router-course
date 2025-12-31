@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { ActivatedRoute } from "@angular/router";
+import { ActivatedRoute, Router } from "@angular/router";
 
 @Component({
   selector: "chat",
@@ -8,7 +8,11 @@ import { ActivatedRoute } from "@angular/router";
   standalone: false,
 })
 export class ChatComponent implements OnInit {
-  constructor(private route: ActivatedRoute) {}
+  constructor(private router: Router, private route: ActivatedRoute) {}
 
   ngOnInit(): void {}
+
+  closeChat(): void {
+    this.router.navigate(["../", { outlets: { chat: null } }]);
+  }
 }
