@@ -1,13 +1,16 @@
 {
+  "angularCompilerOptions": {
+    "strictStandalone": false
+  },
   "compileOnSave": false,
   "compilerOptions": {
-    "module": "esnext",
+    "declaration": false,
     "esModuleInterop": true,
+    "experimentalDecorators": true,
+    "module": "esnext",
+    "moduleResolution": "bundler",
     "outDir": "./dist/out-tsc",
     "sourceMap": true,
-    "declaration": false,
-    "moduleResolution": "bundler",
-    "experimentalDecorators": true,
     "target": "ES2022",
     "typeRoots": [
       "node_modules/@types"
