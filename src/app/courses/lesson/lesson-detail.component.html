@@ -15,10 +15,10 @@
       navigate_before
     </mat-icon>
 
-    <iframe width="400" height="220" frameborder="0" allowfullscreen
-      [src]="('https://www.youtube.com/embed/' + lesson?.videoId) | safeUrl">
-
-    </iframe>
+    <iframe *ngIf="lesson?.videoId"
+      width="400" height="220" frameborder="0" allowfullscreen
+      [src]="('https://www.youtube.com/embed/' + lesson?.videoId) | safeUrl"
+    ></iframe>
 
     <mat-icon class="nav-button" *ngIf="!lesson.last" (click)="next(lesson)">
       navigate_next
