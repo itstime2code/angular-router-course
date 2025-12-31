@@ -4,9 +4,9 @@
   "license": "MIT",
   "scripts": {
     "ng": "ng",
-    "start:ui": "ng serve  --proxy-config ./proxy.json",
+    "start:ui": "ng serve  --proxy-config ./proxy.json --port 4500",
     "start:api": "ts-node -P ./server/server.tsconfig.json ./server/server.ts",
-    "start": "ng serve  --proxy-config ./proxy.json",
+    "start": "concurrently \"npm run start:ui\" \"npm run start:api\"",
     "server": "ts-node -P ./server/server.tsconfig.json ./server/server.ts",
     "build": "ng build --optimization=false --source-map --named-chunks",
     "test": "ng test",

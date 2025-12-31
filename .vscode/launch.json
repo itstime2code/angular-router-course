@@ -1,0 +1,59 @@
+{
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Debug App with Chrome",
+      "type": "chrome",
+      "request": "launch",
+      "url": "http://localhost:4500",
+      "webRoot": "${workspaceFolder}",
+      "runtimeArgs": [
+        "--incognito",
+        "--window-name=Debug App with Chrome"
+      ],
+      // "userDataDir": "${workspaceFolder}/.vscode/vscode-chrome-debug-userdatadir",
+      // "userDataDir": "C:/Users/DELL/.vscode/vscode-chrome-debug-userdatadir",
+      "cwd": "${workspaceFolder}",
+      "smartStep": true,
+      "sourceMaps": true,
+      "sourceMapPathOverrides": {
+        "webpack:///./*": "${webRoot}/*"
+      }
+    },
+    {
+      "name": "Serve App API",
+      "command": "npm run start:api",
+      "request": "launch",
+      "type": "node-terminal",
+      "cwd": "${workspaceFolder}",
+      "sourceMaps": true,
+      "sourceMapPathOverrides": {
+        "webpack:///./*": "${webRoot}/*"
+      }
+    },
+    {
+      "name": "Serve App UI",
+      "command": "npm run start:ui",
+      "request": "launch",
+      "type": "node-terminal",
+      "cwd": "${workspaceFolder}",
+      "sourceMaps": true,
+      "sourceMapPathOverrides": {
+        "webpack:///./*": "${webRoot}/*"
+      }
+    }
+  ],
+  "compounds": [
+    {
+      "name": "Launch and Serve App",
+      "configurations": [
+        "Serve App API",
+        "Serve App UI",
+        "Debug App with Chrome"
+      ]
+    }
+  ]
+}
